@@ -33,9 +33,6 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 class Item(models.Model):
-    """
-    Represents an item in the inventory.
-    """
     slug = AutoSlugField(unique=True , populate_from='name')
     name = models.CharField(max_length=50, blank=False, null=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -45,9 +42,7 @@ class Item(models.Model):
     vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        """
-        String representation of the item.
-        """
+
         return f"{self.name} - Category: {self.category}, Quantity: {self.quantity}"
 
     def get_absolute_url(self):

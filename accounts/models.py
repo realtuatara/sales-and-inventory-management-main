@@ -9,15 +9,15 @@ from django_extensions.db.fields import AutoSlugField
 
 
 STATUS_CHOICES = [
-    ('INA', 'Inactive'),
-    ('A', 'Active'),
-    ('OL', 'On_leave')
+    ('INA', 'Неактивен'),
+    ('A', 'Активен'),
+    ('OL', 'В отпуске')
 ]
 
 ROLE_CHOICES = [
-    ('OP', 'Operative'),
-    ('EX', 'Executive'),
-    ('AD', 'Admin')
+    ('OP', 'Бармен'),
+    ('EX', 'Менеджер'),
+    ('AD', 'Администратор')
 ]
 
 

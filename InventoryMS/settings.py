@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-g_n2+2bznu6e@1wel!i(&-4tp86_7lop5395ww+i4x%9*7^old
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.18']
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'accounts.apps.AccountsConfig',
     'transactions.apps.TransactionsConfig',
-    'invoice.apps.InvoiceConfig',
-    'bills.apps.BillsConfig',
+    #'invoice.apps.InvoiceConfig',
+    #'bills.apps.BillsConfig',
 ]
 
 MIDDLEWARE = [

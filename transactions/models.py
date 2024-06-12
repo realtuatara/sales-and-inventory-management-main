@@ -45,7 +45,7 @@ class Sale(models.Model):
 
 class Purchase(models.Model):
     slug = AutoSlugField(unique=True , populate_from='vendor')
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, verbose_name=('Товар'))
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, verbose_name=('Продукция'))
     description = models.TextField(max_length=300, blank=True, null=True, verbose_name=('Описание'))
     vendor = models.ForeignKey(Vendor, related_name='vendor', on_delete=models.CASCADE, blank=False, null=False, verbose_name=('Поставщик'))
     order_date = models.DateTimeField(auto_now_add=True, verbose_name=('Дата заявки'))

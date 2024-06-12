@@ -135,37 +135,20 @@ class ProductDetailView(LoginRequiredMixin, FormMixin, DetailView):
         return reverse('product-detail', kwargs={'slug': self.object.slug})
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
-    """
-    View class to create a new product.
 
-    Attributes:
-    - model: The model associated with the view.
-    - template_name: The HTML template used for rendering the view.
-    - form_class: The form class used for data input.
-    - success_url: The URL to redirect to upon successful form submission.
-    """
     model = Item
     template_name = 'store/productcreate.html'
     form_class = ProductForm
     success_url = '/products'
 
     def test_func(self):
-        #item = Item.objects.get(id=pk)
-        if self.request.POST.get("quantity") < 1:
+        if self.request.POST.get("quantity") < 0:
             return False
         else:
             return True
 
 class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    """
-    View class to update product information.
 
-    Attributes:
-    - model: The model associated with the view.
-    - template_name: The HTML template used for rendering the view.
-    - fields: The fields to be updated.
-    - success_url: The URL to redirect to upon successful form submission.
-    """
     model = Item
     template_name = 'store/productupdate.html'
     fields = ['name','category','quantity','selling_price', 'expiring_date', 'vendor']
