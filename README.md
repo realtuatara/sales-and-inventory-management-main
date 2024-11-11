@@ -1,5 +1,5 @@
 
-# Grand Autograph Hotel Bar inventory management
+# Hotel Bar inventory management
 
 ## установка
 
