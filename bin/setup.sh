@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash1
 
 echo "🚀 Setting up sales-and-inventory-management"
 
